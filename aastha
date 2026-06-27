@@ -1,0 +1,20 @@
+# Password Strength Checker
+
+This project checks whether a password is Weak, Medium, or Strong.
+
+## Features
+
+- GUI using Tkinter
+- Checks password length
+- Uppercase check
+- Lowercase check
+- Number check
+- Special character check
+
+## Language
+
+Python
+
+## Author
+
+Aastha Thacker
