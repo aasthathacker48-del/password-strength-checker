@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Strength Checker</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    text-align:center;
+    padding:40px;
+}
+.container{
+    background:white;
+    width:70%;
+    margin:auto;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+h1{
+    color:#2c3e50;
+}
+input{
+    width:70%;
+    padding:10px;
+    font-size:16px;
+}
+button{
+    margin-top:15px;
+    padding:10px 20px;
+    background:#007BFF;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+button:hover{
+    background:#0056b3;
+}
+#result{
+    font-size:20px;
+    font-weight:bold;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Password Strength Checker</h1>
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<br>
+
+<button onclick="checkPassword()">Check Password</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+function checkPassword(){
+
+let password=document.getElementById("password").value;
+
+let strength="Weak";
+let color="red";
+
+if(password.length>=8){
+if(/[A-Z]/.test(password) &&
+   /[a-z]/.test(password) &&
+   /[0-9]/.test(password) &&
+   /[@#$%^&*!]/.test(password))
+{
+strength="Strong";
+color="green";
+}
+else if(/[A-Z]/.test(password) &&
+        /[0-9]/.test(password))
+{
+strength="Medium";
+color="orange";
+}
+}
+
+document.getElementById("result").innerHTML="Password Strength : "+strength;
+document.getElementById("result").style.color=color;
+
+}
+</script>
+
+</body>
+</html>
